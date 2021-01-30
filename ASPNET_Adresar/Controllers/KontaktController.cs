@@ -54,7 +54,7 @@ namespace ASPNET_Adresar.Controllers
         public async Task<IActionResult> Create([Bind("Id,Ime,Prezime,Adresa,Telefon,EMail")] Kontakt kontakt)
         {
             if (ModelState.IsValid)
-            {
+            { //added to know which user has which address book
                 kontakt.User = User.Identity.Name;
                 _context.Add(kontakt);
                 await _context.SaveChangesAsync();
