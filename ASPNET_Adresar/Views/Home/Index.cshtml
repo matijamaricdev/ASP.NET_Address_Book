@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @if (User.Identity.Name != null)
+    {
+        <h4>Dobrodošli na ASP.NET aplikaciju za online adresar. Odaberite meni za pregled adresara ili kliknite na iduću poveznicu:  <a asp-controller="Kontakt" asp-action="Index">Pregledaj sve kontakte u adresaru</a> </h4>
+    }
+    else
+    {
+        <h4>Dobrodošli na ASP.NET aplikaciju za online adresar. Da biste kreirali kontakte u adresaru, molimo da se registrirate na sljedećem linku: </h4>
+        <button type="button" class="btn btn-primary">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Registriraj se</a>
+        </button>
+    }
+</div>
